@@ -5,13 +5,11 @@ description = "{{cookiecutter.project_description}}"
 authors = [{ name = "{{cookiecutter.author}}", email = "{{cookiecutter.email}}" }]
 readme = "README.md"
 keywords = ['python']
-requires-python = ">=3.9,<4.0"
+requires-python = ">=3.11,<4.0"
 classifiers = [
     "Intended Audience :: Developers",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
@@ -19,9 +17,15 @@ classifiers = [
 ]
 
 [project.urls]
+{% if cookiecutter.hp250 == 'y' %}
+Homepage = "https://hp250.fritz.box/git/{{cookiecutter.org_github_handle}}/{{cookiecutter.project_name}}/"
+Repository = "https://hp250.fritz.box/git/{{cookiecutter.org_github_handle}}/{{cookiecutter.project_name}}"
+Documentation = "https://hp250.fritz.box:8443/{{cookiecutter.project_name}}/"
+{%- else -%}
 Homepage = "https://{{cookiecutter.author_github_handle}}.github.io/{{cookiecutter.project_name}}/"
 Repository = "https://github.com/{{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}"
 Documentation = "https://{{cookiecutter.author_github_handle}}.github.io/{{cookiecutter.project_name}}/"
+{% endif %}
 
 [dependency-groups]
 dev = [
@@ -45,6 +49,17 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools]
 py-modules = ["{{cookiecutter.project_slug}}"]
 {%- endif %}
+
+{% if cookiecutter.hp250 == 'y' %}
+[tool.uv]
+extra-index-url = ["https://hp250.fritz.box/git/api/packages/{{cookiecutter.org_github_handle}}/pypi/simple/"]
+allow-insecure-host = ["hp250.fritz.box"]
+
+[[tool.uv.index]]
+name = "hp250"
+url = "https://hp250.fritz.box/git/api/packages/{{cookiecutter.org_github_handle}}/pypi/simple/"
+publish-url = "https://hp250.fritz.box/git/api/packages/{{cookiecutter.org_github_handle}}/pypi/ "
+{% endif %}
 
 [tool.mypy]
 files = [

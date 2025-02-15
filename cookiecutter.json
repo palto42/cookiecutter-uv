@@ -1,7 +1,8 @@
 {
-    "author": "Florian Maas",
-    "email": "fpgmaas@gmail.com",
-    "author_github_handle": "fpgmaas",
+    "author": "Matthias Homann",
+    "email": "palto@mailbox.org",
+    "author_github_handle": "palto42",
+    "org_github_handle": "{{cookiecutter.author_github_handle}}",
     "project_name": "example-project",
     "project_slug": "{{cookiecutter.project_name|lower|replace('-', '_')}}",
     "project_description": "This is a template repository for Python projects that use uv for their dependency management.",
@@ -13,6 +14,7 @@
     "codecov": ["y", "n"],
     "dockerfile": ["y", "n"],
     "devcontainer": ["y", "n"],
+    "hp250": ["y", "n"],
     "open_source_license": [
         "MIT license",
         "BSD license",

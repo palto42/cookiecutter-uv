@@ -1,11 +1,20 @@
 site_name: {{cookiecutter.project_name}}
+{% if cookiecutter.hp250 == 'y' %}
+repo_url: https://hp250.fritz.box/git/{{cookiecutter.org_github_handle}}/{{cookiecutter.project_name}}
+site_url: https://hp250.fritz.box/git/{{cookiecutter.org_github_handle}}/{{cookiecutter.project_name}}
+{%- else -%}
 repo_url: https://github.com/{{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}
 site_url: https://{{cookiecutter.author_github_handle}}.github.io/{{cookiecutter.project_name}}
+{%- endif -%}
 site_description: {{cookiecutter.project_description}}
 site_author: {{cookiecutter.author}}
 edit_uri: edit/main/docs/
-repo_name: {{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}
-copyright: Maintained by <a href="https://{{cookiecutter.author_github_handle}}.com">{{cookiecutter.author_github_handle}}</a>.
+repo_name: {{cookiecutter.org_github_handle}}/{{cookiecutter.project_name}}
+{% if cookiecutter.hp250 == 'y' %}
+copyright: Maintained by <a href="https://hp250.fritz.box/git/{cookiecutter.author_github_handle}}.com">{{cookiecutter.author_github_handle}}</a>.
+{%- else -%}
+copyright: Maintained by <a href="https://github.com/{cookiecutter.author_github_handle}}.com">{{cookiecutter.author_github_handle}}</a>.
+{%- endif -%}
 
 nav:
   - Home: index.md
@@ -47,9 +56,17 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
+{% if cookiecutter.hp250 == 'y' %}
+      link: https://hp250.fritz.box/git/{{cookiecutter.org_github_handle}}/{{cookiecutter.project_name}}
+{%- else -%}
       link: https://github.com/{{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}
+{%- endif -%}
     - icon: fontawesome/brands/python
+{% if cookiecutter.hp250 == 'y' %}
+      link: https://hp250.fritz.box/git/{{cookiecutter.org_github_handle}}/-/packages/pypi/{{cookiecutter.project_name}}
+{%- else -%}
       link: https://pypi.org/project/{{cookiecutter.project_name}}
+{%- endif -%}
 
 markdown_extensions:
   - toc:

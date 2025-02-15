@@ -41,7 +41,11 @@ clean-build: ## Clean build artifacts
 .PHONY: publish
 publish: ## Publish a release to PyPI.
 	@echo "🚀 Publishing."
+{% if cookiecutter.hp250 == 'y' %}
+	@uv publish --index hp250
+{%- else %}
 	@uvx twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
+{%- endif%}
 
 .PHONY: build-and-publish
 build-and-publish: build publish ## Build and publish.
