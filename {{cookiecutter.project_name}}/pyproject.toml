@@ -18,8 +18,8 @@ classifiers = [
 
 [project.urls]
 {% if cookiecutter.hp250 == 'y' %}
-Homepage = "https://hp250.fritz.box/git/{{cookiecutter.org_github_handle}}/{{cookiecutter.project_name}}/"
-Repository = "https://hp250.fritz.box/git/{{cookiecutter.org_github_handle}}/{{cookiecutter.project_name}}"
+Homepage = "https://hp250.fritz.box/git/{{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}/"
+Repository = "https://hp250.fritz.box/git/{{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}"
 Documentation = "https://hp250.fritz.box:8443/{{cookiecutter.project_name}}/"
 {%- else -%}
 Homepage = "https://{{cookiecutter.author_github_handle}}.github.io/{{cookiecutter.project_name}}/"
@@ -55,13 +55,13 @@ packages = ["{{cookiecutter.project_slug}}"]
 
 {% if cookiecutter.hp250 == 'y' %}
 [tool.uv]
-extra-index-url = ["https://hp250.fritz.box/git/api/packages/{{cookiecutter.org_github_handle}}/pypi/simple/"]
+extra-index-url = ["https://hp250.fritz.box/git/api/packages/{{cookiecutter.author_github_handle}}/pypi/simple/"]
 allow-insecure-host = ["hp250.fritz.box"]
 
 [[tool.uv.index]]
 name = "hp250"
-url = "https://hp250.fritz.box/git/api/packages/{{cookiecutter.org_github_handle}}/pypi/simple/"
-publish-url = "https://hp250.fritz.box/git/api/packages/{{cookiecutter.org_github_handle}}/pypi/ "
+url = "https://hp250.fritz.box/git/api/packages/{{cookiecutter.author_github_handle}}/pypi/simple/"
+publish-url = "https://hp250.fritz.box/git/api/packages/{{cookiecutter.author_github_handle}}/pypi/ "
 {% endif %}
 
 [tool.mypy]

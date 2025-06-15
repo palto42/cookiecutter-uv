@@ -11,7 +11,7 @@
 {{cookiecutter.project_description}}
 
 {%- if cookiecutter.hp250 == 'y' %}
-- **Git repository**: <https://hp250.fritz.box/git/{{cookiecutter.org_github_handle}}/{{cookiecutter.project_name}}/>
+- **Git repository**: <https://hp250.fritz.box/git/{{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}/>
 - **Documentation** <https://hp250.fritz.box:8443/{{cookiecutter.project_name}}/>
 {%- else -%}
 - **Git repository**: <https://github.com/{{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}/>
