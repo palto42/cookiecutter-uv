@@ -1,10 +1,14 @@
 {
-  "author": "Florian Maas",
-  "email": "fpgmaas@gmail.com",
-  "author_github_handle": "fpgmaas",
+  "author": "Matthias Homann",
+  "email": "m-hom@mailbox.org",
+  "author_github_handle": "palto42",
   "project_name": "example-project",
   "project_slug": "{{cookiecutter.project_name|lower|replace('-', '_')}}",
   "project_description": "This is a template repository for Python projects that use uv for their dependency management.",
+    "hp250": [
+    "y",
+    "n"
+  ],
   "layout": [
     "flat",
     "src"
